@@ -1,0 +1,45 @@
+- first memorize all the basic symbols and syntax, then apply them through a series of exercises.
+- How to memorize?
+    - Create a set of flash cards that have a symbol on one side and the description on the other.
+    - Randomize the flash cards and start going through them on one side.
+    - If you cant't remember the other side of the card, put that card into a separate pile.
+    - Pick up the fail pile and drill yourself on only those card.
+    - Take the card you can't recall with you, practice memorizing them when you have free time.
+- The keywords of a language are words that argument the symbols so that the language reads well.
+- A syntax structure is a pattern of symbols that make up a C program code form, such as an if-statement or a while-loop.
+- The way to conquer difficulty is a little piece at a time.
+- In C, there isn't a Boolean type. Instead, any integer that's O is false and otherwise it's true. Because in computer , truth values are just integers.
+- int areas[] = { 10, 12, 13, 14, 20 };
+ - Look at the type, and in this case, it's int.
+ - Look at the [] and see that there's no length given.
+ - Look at the initializer {10, 12, 13, 14, 20} and figure out that you want those five integers in your array.
+ - Create a piece of memory in the computer that can hold 5 integers one after another.
+ - Take the name you want, areas, and assign it this location.
+- argc, argv
+ - The OS passes each command line argument as a string in the argv array. The program's name(./ex12) is at 0, with the rest coming after it.
+ - The OS also sets argc to the number of arguments in the argv array.
+- Pointers
+ - Ask the OS for a chunk of memory and use a pointer to work with it. This includes strings and something you haven't seen yet, structs.
+ - Pass large blocks of memory (like large structs) to functions with a pointer, so you don't have to pass the whole thing to them.
+ - Take the adress of a function, so you can use it as a dynamic callback.
+ - Scan complex chunks of memory, converting bytes off of a network socket into data structures or parsing files.
+- The pointer lexicon
+ - type \*ptr: A pointer of type name ptr.
+ - \*ptr: The value of whatever ptr is pointed at.
+ - \*(ptr + i): The value of (whatever ptr is pointed at plus i)
+ - &thing : The adress of thing.
+ - type \*ptr = &thing : A pointer of type named ptr set to the address of thing.
+ - ptr++ : Increment where ptr points.
+- A structure in C is a collection of other data types (variables) that are stored in one block of memory where you can access each variable independently by name. They are similar to a record in a database table, or a very simplistic class in an OOP language.
+ - In the ex16.c, we make a struct that has fields for a person: name, age, weight and weight.
+ - Each of those fields has a type, like int.
+ - C then packs those together so that they can all be contained in one single struct.
+ - The struct Person is now a compound data type, which means you can refer to struct Person using the same kinds of expressions you would for other data types.
+ - This let you pass the whole cohesive grouping to other functions, as you did with Person_print.
+ - You can then access the individual parts of a struct by their names using x->y if you're dealing with a pointer.
+- There's also a way to make a struct that doesn't need a pointer, and you use the x.y(period) syntax to work with it.  (stack)
+- C is different because it's using the real CPU's actual mechinery to do its work, and that incolves a chunk of RAM called the stack and another called the heap.
+ - The heap is easier to explain since it's just all the remaining memory in your computer, and you access it with the function malloc to get more. Each time you called the malloc, the OS uses the internal functions to register that piece of memory to you, and then returns a pointer to it.
+ - Remember to use free to return the memory to the OS so that it can be used by other programmers.
+ - The stack is special region of memory that stores temporary variables, which each function creates as locals to that function. How it works is that each argument to a function is pushed onto the stack and then used inside the function.
+ - When you put too much data on the stack, then you can cause a stack overflow.

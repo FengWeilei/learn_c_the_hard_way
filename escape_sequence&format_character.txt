@@ -1,0 +1,28 @@
+Escaped sequences:
+Escape sequence 	Hex value in ASCII 	   Character represented
+\a 	                07 	                    Alert (Beep, Bell) (added in C89)[1]
+\b 	                08 	                    Backspace
+\f 	                0C 	                    Formfeed
+\n 	                0A 	                    Newline (Line Feed); see notes below
+\r 	                0D 	                    Carriage Return
+\t 	                09 	                    Horizontal Tab
+\v 	                0B 	                    Vertical Tab
+\\ 	                5C 	                    Backslash
+\' 	                27 	                    Single quotation mark
+\" 	                22 	                    Double quotation mark
+\? 	                3F 	                    Question mark (used to avoid trigraphs)
+\nnn                any 	                The byte whose numerical value is given by nnn interpreted as an octal number
+\xhh…               any 	                The byte whose numerical value is given by hh… interpreted as a hexadecimal number
+\e                  1B 	                    escape character (some character sets)
+\Uhhhhhhhh 	        none 	                Unicode code point where h is a hexadecimal digit
+\uhhhh              none 	                Unicode code point below 10000 hexadecimal
+
+
+格式字符：
+d,i         输入有符号的十进制整数
+o           无符号八进制整数
+x,X         无符号十六进制整数
+u           无符号十进制整数
+f,e         输入实型数
+c           输入单个字符
+s           输入字符串，结果存到字符数组中，输入时，以第一个非空白字符开始，以第一个空白字符结束，'\0'可以标志字符串结束。
